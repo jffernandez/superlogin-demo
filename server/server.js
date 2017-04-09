@@ -117,7 +117,7 @@ app.use(function(err, req, res, next) {
 
 // Force HTTPS redirect unless we are using localhost
 function httpsRedirect(req, res, next) {
-  if(req.protocol === 'https' || req.header('X-Forwarded-Proto') === 'https' || req.hostname === 'localhost') {
+  if(req.protocol === 'https' || req.header('X-Forwarded-Proto') === 'https' || req.hostname === 'localhost' || req.hostname === 'gelatto.dev') {
     return next();
   }
   res.status(301).redirect("https://" + req.headers['host'] + req.url);

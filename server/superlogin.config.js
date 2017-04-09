@@ -14,7 +14,7 @@ module.exports = {
     confirmEmailRedirectURL: '/confirm-email'
   },
   dbServer: {
-    protocol: process.env.DB_HOST ? 'https://' : 'http://',
+    protocol: process.env.DB_PROTOCOL || 'http://',
     host: process.env.DB_HOST || 'localhost:5984',
     user: process.env.DB_USER,
     password: process.env.DB_PASS,
